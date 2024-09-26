@@ -29,7 +29,7 @@ class MoviesController extends GetxController {
     _loading.value = true;
     _topRatedPage.value++;
 
-    final url = Uri.https(dotenv.env['URL']!, dotenv.env['POPULAR_ENDPOINT']!, {
+    final url = Uri.https(dotenv.env['URL']!, dotenv.env['TOP_RATED_ENDPOINT']!, {
       'api_key': dotenv.env['APIKEY'],
       'language': dotenv.env['LANGUAGE'],
       'page': _topRatedPage.toString(),

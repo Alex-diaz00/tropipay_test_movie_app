@@ -49,7 +49,7 @@ class MovieDetailPage extends StatelessWidget {
         color: Colors.white, //change your color here
       ),
       elevation: 2.0,
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: Colors.grey[800],
       expandedHeight: 200.0,
       floating: false,
       pinned: true,
@@ -113,9 +113,9 @@ class MovieDetailPage extends StatelessWidget {
                     Text('Duración: $hours h: $minutes m'),
                     Row(
                       children: <Widget>[
-                        const Icon(Icons.star_border),
+                        const Icon(Icons.star),
                         Text(
-                          movie.voteAverage.toString(),
+                          movie.voteAverage.toStringAsFixed(1),
                         ),
                       ],
                     ),

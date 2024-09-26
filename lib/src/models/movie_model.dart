@@ -5,8 +5,8 @@ class Movies {
 
   Movies.fromJsonList(List<dynamic> jsonList) {
     for (var item in jsonList) {
-      final pelicula = Movie.fromJsonMap(item);
-      items.add(pelicula);
+      final movie = Movie.fromJsonMap(item);
+      items.add(movie);
     }
   }
 }
@@ -37,17 +37,6 @@ class Movie {
     releaseDate,
   });
 
-  Movie.copy(Movie p) {
-    voteCount = p.voteCount;
-    id = p.id;
-    voteAverage = p.voteAverage;
-    title = p.title;
-    posterPath = p.posterPath;
-    backdropPath = p.backdropPath;
-    overview = p.overview;
-    releaseDate = p.releaseDate;
-  }
-
   Movie.fromJsonMap(Map<String, dynamic> json) {
     voteCount = json['vote_count'];
     id = json['id'];
@@ -71,30 +60,12 @@ class Movie {
       return 'https://image.tmdb.org/t/p/w500$backdropPath';
     }
     return null;
-    
   }
 }
 
 class MovieDetail extends Movie {
   late int runtime;
   late List genres;
-
-  MovieDetail(
-      {super.voteCount,
-      super.id,
-      super.video,
-      super.voteAverage,
-      super.title,
-      super.popularity,
-      super.posterPath,
-      super.originalLanguage,
-      super.originalTitle,
-      super.backdropPath,
-      super.adult,
-      super.overview,
-      super.releaseDate,
-      runtime,
-      genres});
 
   MovieDetail.fromJsonMap(Map<String, dynamic> json) : super.fromJsonMap(json) {
     runtime = json['runtime'];
